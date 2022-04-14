@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Products</title>
+    </head>
+    <body>
+        <img src="/static/birds2.png" heigh=50 />
+        <h2>Товарчики</h2>
+        <p><a href="/create">Добавь</a>  |  <a href="/login">Привет</a>  |  <a href="/logout">Пока</a></p>
+        <table>
+            <thead><th>Id</th><th>Модель</th><th>Марка</th><th>Цена</th><th></th></thead>
+            {{range . }}
+            <tr>
+                <td>{{.Id}}</td>
+                <td>{{.Model}}</td>
+                <td>{{.Company}}</td>
+                <td>{{.Price}}</td>
+                <td><a href="/edit/{{.Id}}">Поправь</a> |
+                    <a href="/delete/{{.Id}}">Убери</a>
+                </td>
+            </tr>
+            {{end}}
+        </table>
+    </body>
+</html>
